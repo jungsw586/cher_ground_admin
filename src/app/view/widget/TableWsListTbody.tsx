@@ -27,6 +27,8 @@ const TableWsListTbody: React.FunctionComponent<TableWsListTbodyProps> = props =
 };
 
 const TableWsListTbodyContentLayout = styled.tr`
+  cursor: pointer;
+
   td {
     padding: 21px 30px;
     font-family: NanumSquare_acR;

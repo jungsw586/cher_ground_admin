@@ -9,7 +9,13 @@ import { RouteComponentProps } from "react-router";
 import TableWsList from "../widget/TableWSList";
 import WS_LIST from "../widget/DATA";
 
-const RetailerDetailView: React.FunctionComponent<RouteComponentProps> = props => {
+interface RetailerDetailWsInfoParams {
+  id: string;
+}
+
+const RetailerDetailWsInfoView: React.FunctionComponent<RouteComponentProps<
+  RetailerDetailWsInfoParams
+>> = props => {
   const handlerRetailerInfoModeOn = () => {
     props.history.push(`/retailer_info/${props.match.params.id}`);
   };
@@ -46,4 +52,4 @@ const RetailerDetailView: React.FunctionComponent<RouteComponentProps> = props =
   );
 };
 
-export default RetailerDetailView;
+export default RetailerDetailWsInfoView;

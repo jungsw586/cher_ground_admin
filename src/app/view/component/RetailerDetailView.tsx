@@ -8,7 +8,13 @@ import RetailerNavTab from "../widget/RetailerNavTab";
 import { RouteComponentProps } from "react-router";
 import RetailerInfoCard from "../widget/RetailerInfoCard";
 
-const RetailerDetailView: React.FunctionComponent<RouteComponentProps> = props => {
+interface RetailerDetailParams {
+  id: string;
+}
+
+const RetailerDetailView: React.FunctionComponent<RouteComponentProps<
+  RetailerDetailParams
+>> = props => {
   const handlerRetailerInfoModeOn = () => {
     props.history.push(`/retailer_info/${props.match.params.id}`);
   };
