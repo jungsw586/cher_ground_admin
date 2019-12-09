@@ -4,19 +4,9 @@ import MenuBar from "../widget/MenuBar";
 import MainBodyLayout from "../widget/MainBodyLayout";
 import MainContentLayout from "../widget/MainContentLayout";
 import PageBarDepth from "../widget/PageBarDepth";
-import RetailerNavTab from "../widget/RetailerNavTab";
 import { RouteComponentProps } from "react-router";
-import RetailerInfoCard from "../widget/RetailerInfoCard";
 
 const RetailerDetailView: React.FunctionComponent<RouteComponentProps> = props => {
-  const handlerRetailerInfoModeOn = () => {
-    props.history.push(`/retailer_info/${props.match.params.id}`);
-  };
-
-  const handlerWsListInfoModeOn = () => {
-    props.history.push(`/retailer_ws_info/${props.match.params.id}`);
-  };
-
   const goBack = () => {
     props.history.goBack();
   };
@@ -27,14 +17,7 @@ const RetailerDetailView: React.FunctionComponent<RouteComponentProps> = props =
       <MainBodyLayout>
         <MenuBar />
         <MainContentLayout>
-          <PageBarDepth title={"Cher_Ground"} goBack={goBack} />
-          <RetailerNavTab
-            RTInfoAtive={true}
-            WSInfoAtive={false}
-            handlerRetailerInfoModeOn={handlerRetailerInfoModeOn}
-            handlerWsListInfoModeOn={handlerWsListInfoModeOn}
-          />
-          <RetailerInfoCard />
+          <PageBarDepth title={"거래처 관리"} goBack={goBack} />
         </MainContentLayout>
       </MainBodyLayout>
     </>

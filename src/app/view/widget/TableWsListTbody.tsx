@@ -7,11 +7,16 @@ interface TableWsListTbodyProps {
   ws_address: string;
   ws_number: string;
   ws_tax_option: string;
+  goWsDetailView?: any;
 }
 
 const TableWsListTbody: React.FunctionComponent<TableWsListTbodyProps> = props => {
   return (
-    <TableWsListTbodyContentLayout>
+    <TableWsListTbodyContentLayout
+      onClick={() => {
+        props.goWsDetailView(props.ws_id);
+      }}
+    >
       <td>{props.ws_id}</td>
       <td>{props.ws_name}</td>
       <td>{props.ws_address}</td>
@@ -24,7 +29,6 @@ const TableWsListTbody: React.FunctionComponent<TableWsListTbodyProps> = props =
 const TableWsListTbodyContentLayout = styled.tr`
   td {
     padding: 21px 30px;
-    height: 58px;
     font-family: NanumSquare_acR;
     font-size: 14px;
     font-weight: normal;

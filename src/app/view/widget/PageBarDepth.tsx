@@ -3,17 +3,16 @@ import styled from "styled-components";
 import { RouteComponentProps } from "react-router";
 const BackBtn_IMG = require("app/img/web-back-arrow-sup-gr-80.svg");
 
-interface PageBarDepthProps extends RouteComponentProps {
+interface PageBarDepthProps {
   title: string;
+  pathName?: string;
+  goBack: any;
 }
 
 const PageBarDepth: React.FunctionComponent<PageBarDepthProps> = props => {
   return (
     <PageBarDepthLayout>
-      <div
-        className="back-btn-box"
-        onClick={() => props.history.push("/retailer")}
-      >
+      <div className="back-btn-box" onClick={props.goBack}>
         <img src={BackBtn_IMG} />
         <div className="btn-description">Back</div>
       </div>

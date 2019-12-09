@@ -8,18 +8,17 @@ import InputRetailerInfo from "../widget/InputRetailerInfo";
 import { RouteComponentProps } from "react-router";
 
 const RetailerAddView: React.FunctionComponent<RouteComponentProps> = props => {
+  const goBack = () => {
+    props.history.goBack();
+  };
+
   return (
     <>
       <NavTopBar />
       <MainBodyLayout>
         <MenuBar />
         <MainContentLayout>
-          <PageBarDepth
-            history={props.history}
-            match={props.match}
-            location={props.location}
-            title={"소매 업체 추가"}
-          />
+          <PageBarDepth title={"소매 업체 추가"} goBack={goBack} />
           <InputRetailerInfo />
         </MainContentLayout>
       </MainBodyLayout>

@@ -6,7 +6,8 @@ import MainContentLayout from "../widget/MainContentLayout";
 import PageBarDepth from "../widget/PageBarDepth";
 import RetailerNavTab from "../widget/RetailerNavTab";
 import { RouteComponentProps } from "react-router";
-import RetailerInfoCard from "../widget/RetailerInfoCard";
+import TableWsList from "../widget/TableWSList";
+import WS_LIST from "../widget/DATA";
 
 const RetailerDetailView: React.FunctionComponent<RouteComponentProps> = props => {
   const handlerRetailerInfoModeOn = () => {
@@ -15,6 +16,10 @@ const RetailerDetailView: React.FunctionComponent<RouteComponentProps> = props =
 
   const handlerWsListInfoModeOn = () => {
     props.history.push(`/retailer_ws_info/${props.match.params.id}`);
+  };
+
+  const goWsDetailView = (wholesalerId: string) => {
+    props.history.push(`/retailer_ws_detail/${wholesalerId}`);
   };
 
   const goBack = () => {
@@ -29,12 +34,12 @@ const RetailerDetailView: React.FunctionComponent<RouteComponentProps> = props =
         <MainContentLayout>
           <PageBarDepth title={"Cher_Ground"} goBack={goBack} />
           <RetailerNavTab
-            RTInfoAtive={true}
-            WSInfoAtive={false}
+            RTInfoAtive={false}
+            WSInfoAtive={true}
             handlerRetailerInfoModeOn={handlerRetailerInfoModeOn}
             handlerWsListInfoModeOn={handlerWsListInfoModeOn}
           />
-          <RetailerInfoCard />
+          <TableWsList data={WS_LIST} goWsDetailView={goWsDetailView} />
         </MainContentLayout>
       </MainBodyLayout>
     </>
