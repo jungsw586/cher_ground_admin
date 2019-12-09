@@ -33,7 +33,7 @@ const RetailerView: React.FunctionComponent<RouteComponentProps> = props => {
   }, []);
 
   const goRetailerDetail = (retailerId: string) => {
-    props.history.push(`/retailer/${retailerId}`);
+    props.history.push(`/retailer_info/${retailerId}`);
   };
 
   return (
@@ -51,11 +51,6 @@ const RetailerView: React.FunctionComponent<RouteComponentProps> = props => {
             <ButtonAddRetail />
           </div>
           <RetailerList goRetailerDetail={goRetailerDetail} />
-          {/* {retailers === undefined ? (
-            <div>loading</div>
-          ) : (
-            <div>{retailers.length}</div>
-          )} */}
         </MainContentLayout>
       </MainBodyLayout>
     </>

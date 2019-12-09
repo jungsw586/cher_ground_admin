@@ -9,11 +9,13 @@ interface RetailerCardProps {
   author?: string;
   description?: string;
   goRetailerDetail: any;
+  onClick?: () => void;
 }
 
 const RetailerCard: React.FunctionComponent<RetailerCardProps> = props => {
   return (
     <RetailerCardLayout>
+      <div onClick={() => {}}></div>
       <div className="inner-container">
         <div className="title Small-Selection">{props.title}</div>
         <div className="author Micro-Label-Idle">{`memo by ${props.author}`}</div>

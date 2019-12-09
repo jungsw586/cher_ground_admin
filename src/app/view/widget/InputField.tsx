@@ -22,7 +22,6 @@ const InputFieldLayout = styled.div<InputFieldProps>`
   display: flex;
   flex-direction: column;
   width: ${props => {
-    console.log(props.size);
     if (props.size === "small") {
       return "240px";
     } else if (props.size === "medium") {
